@@ -11,15 +11,10 @@ import requests
 import json
 from PIL import Image
 from io import BytesIO
-import random
 
-for i in range(10):
-  random_number = random.randint(1, 2)
+for i in range(20):
   # Get the image URL from the API
-  if (random_number == 1):
-    response = requests.get('https://api.waifu.pics/nsfw/waifu')
-  else:
-    response = requests.get('https://api.waifu.pics/sfw/waifu')
+  response = requests.get('https://api.waifu.pics/sfw/waifu')
 
   json_data = json.loads(response.content)
   image_url = json_data["url"]
